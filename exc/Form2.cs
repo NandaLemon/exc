@@ -23,5 +23,12 @@ namespace exc
             this.pakaianTableAdapter.Fill(this.laundry_dbDataSet.pakaian);
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form1 f2 = new Form1();
+            f2.Show();
+            this.Close();
+        }
     }
 }

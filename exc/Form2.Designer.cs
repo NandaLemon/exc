@@ -30,7 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.laundry_dbDataSet = new exc.Laundry_dbDataSet();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.pakaianBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
@@ -40,9 +42,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.laundry_dbDataSet = new exc.Laundry_dbDataSet();
-            this.pakaianBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pakaianTableAdapter = new exc.Laundry_dbDataSetTableAdapters.pakaianTableAdapter();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.laundry_dbDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pakaianBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -55,6 +56,11 @@
             this.textBox1.Size = new System.Drawing.Size(217, 26);
             this.textBox1.TabIndex = 0;
             // 
+            // laundry_dbDataSet
+            // 
+            this.laundry_dbDataSet.DataSetName = "Laundry_dbDataSet";
+            this.laundry_dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // textBox2
             // 
             this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pakaianBindingSource, "id_pakaian", true));
@@ -62,6 +68,11 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(217, 26);
             this.textBox2.TabIndex = 1;
+            // 
+            // pakaianBindingSource
+            // 
+            this.pakaianBindingSource.DataMember = "pakaian";
+            this.pakaianBindingSource.DataSource = this.laundry_dbDataSet;
             // 
             // textBox3
             // 
@@ -147,25 +158,26 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "Transaksi";
             // 
-            // laundry_dbDataSet
-            // 
-            this.laundry_dbDataSet.DataSetName = "Laundry_dbDataSet";
-            this.laundry_dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // pakaianBindingSource
-            // 
-            this.pakaianBindingSource.DataMember = "pakaian";
-            this.pakaianBindingSource.DataSource = this.laundry_dbDataSet;
-            // 
             // pakaianTableAdapter
             // 
             this.pakaianTableAdapter.ClearBeforeFill = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 391);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 47);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -177,7 +189,6 @@
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
-            this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.Name = "Form2";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
@@ -204,5 +215,6 @@
         private Laundry_dbDataSet laundry_dbDataSet;
         private System.Windows.Forms.BindingSource pakaianBindingSource;
         private Laundry_dbDataSetTableAdapters.pakaianTableAdapter pakaianTableAdapter;
+        private System.Windows.Forms.Button button1;
     }
 }

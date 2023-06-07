@@ -16,5 +16,12 @@ namespace exc
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form1 f2 = new Form1();
+            f2.Show();
+            this.Close();
+        }
     }
 }
